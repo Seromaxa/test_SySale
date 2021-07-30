@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react"
 import style from "./select.module.css"
 
-export default function Select({ color }) {
+export default function Select({ color, res, reset }) {
   const [active, setActive] = useState(false)
   const [current, setCurrent] = useState({
     id: 0,
@@ -31,6 +31,23 @@ export default function Select({ color }) {
   useEffect(() => {
     color(current)
   }, [current, color])
+  useEffect(() => {
+    if (reset) {
+      setCurrent({
+        id: 0,
+        name: "Цвет",
+        selected: true,
+      })
+      setColors((prev) => {
+        return [
+          ...prev.map((item) => {
+            return { ...item, selected: false }
+          }),
+        ]
+      })
+      res(false)
+    }
+  }, [res, reset])
   const activeHandler = () => {
     setActive(!active)
   }

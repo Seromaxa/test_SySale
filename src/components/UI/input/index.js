@@ -10,7 +10,7 @@ export default function Input({ type, name, text, selected, onChange }) {
         className={style.input}
         type={type}
         name={name}
-        defaultChecked={selected}
+        checked={selected}
         onChange={onChange}
       />
       <label className={style.label} htmlFor={htmlFor}>

@@ -18,11 +18,13 @@ export default function Card({ product }) {
   const [litrs, setlitrs] = useState()
   const [color, setColor] = useState()
   const [count, setCount] = useState()
+  const [reset, setReset] = useState(false)
   useEffect(() => {
     let current = prices.filter((item) => item.id === product.price)
     let price = current[0].costs.filter((item) => item.select === true)
     setCost(price[0].price)
     setlitrs(...current)
+    console.log("wwww")
   }, [product, prices])
 
   const setPrice = (ev) => {
@@ -48,6 +50,11 @@ export default function Card({ product }) {
         price: cost,
       })
     )
+    setReset(true)
+    dispatch(changeCost({ id: litrs.id, item: 100, find: "litrs" }))
+  }
+  const getReset = (ev) => {
+    setReset(ev)
   }
 
   return (
@@ -66,7 +73,11 @@ export default function Card({ product }) {
         <h2 className={style.header}>{product.name}</h2>
         <p className={style.text}>{product.description}</p>
         <div className={style.prices}>
-          <Select color={(ev) => getColor(ev)} />
+          <Select
+            color={(ev) => getColor(ev)}
+            res={(ev) => getReset(ev)}
+            reset={reset}
+          />
           <p className={style.cost}>
             {cost} <span>грн.</span>
           </p>
@@ -81,7 +92,9 @@ export default function Card({ product }) {
                   text={`${item.litrs} мл.`}
                   selected={item.select}
                   onChange={() =>
-                    dispatch(changeCost({ id: litrs.id, item: item.id }))
+                    dispatch(
+                      changeCost({ id: litrs.id, item: item.id, find: "id" })
+                    )
                   }
                 />
               ))
@@ -89,7 +102,11 @@ export default function Card({ product }) {
         </div>
       </div>
       <div className={style.buy}>
-        <Counter dec={(ev) => setPrice(ev)} />
+        <Counter
+          dec={(ev) => setPrice(ev)}
+          res={(ev) => getReset(ev)}
+          reset={reset}
+        />
         <Button text={"Купить"} style={style.submit} onClick={submitHandler} />
       </div>
     </div>

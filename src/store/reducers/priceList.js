@@ -35,7 +35,7 @@ const priceList = createSlice({
           ? {
               ...item,
               costs: item.costs.map((it) =>
-                it.id === actions.payload.item
+                it[actions.payload.find] === actions.payload.item
                   ? { ...it, select: true }
                   : { ...it, select: false }
               ),
