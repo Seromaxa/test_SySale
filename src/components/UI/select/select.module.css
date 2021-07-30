@@ -1,0 +1,85 @@
+.wrapper {
+  position: relative;
+  width: 200px;
+}
+.current {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 8px;
+  height: 30px;
+  padding: 0 5%;
+}
+
+.list {
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  width: inherit;
+  margin: 0;
+}
+.margins {
+  margin-bottom: 10px;
+}
+.arrow {
+  width: 5px;
+  height: 5px;
+  border-bottom: 2px solid #000;
+  border-right: 2px solid #000;
+}
+
+.on {
+  transform: rotate(-135deg);
+}
+.off {
+  transform: rotate(45deg);
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  z-index: 1;
+  padding-top: 5px;
+}
+.dropdown::-webkit-scrollbar {
+  width: 0;
+}
+.dropdown:hover::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 8px;
+  background: #cfd8dc;
+}
+
+.dropdown:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.5);
+  border-radius: 30px;
+  border: 2px solid #cfd8dc;
+}
+
+.dropdown {
+  max-height: 100px;
+  border-radius: 0 0 8px 8px;
+  background: #fff;
+}
+.dropdown.active {
+  display: block;
+}
+.current.active {
+  border-radius: 8px 8px 0 0;
+}
+.item {
+  padding: 5px 5%;
+  border-radius: 0px 10px 10px 0px;
+}
+.item:hover {
+  background: #f3f8fc;
+}
+.item.active {
+  background: #d7e1e9;
+}

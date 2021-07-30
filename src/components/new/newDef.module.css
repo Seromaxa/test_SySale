@@ -1,0 +1,13 @@
+.new {
+  width: 71px;
+  height: 26px;
+  border-radius: 30px;
+  text-align: center;
+  text-transform: uppercase;
+  background: var(--button-color);
+  color: #ffff;
+  font-family: var(--root-font);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

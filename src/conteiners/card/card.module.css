@@ -1,0 +1,94 @@
+.card {
+  width: 100%;
+  background: #f8fafc;
+  border-radius: 25px;
+  padding: 45px 30px 40px;
+  font-family: var(--root-font);
+  margin-bottom: 30px;
+}
+.bord {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+.img_wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 25px;
+  width: 256px;
+  height: 261px;
+  overflow: hidden;
+}
+.img {
+  height: auto;
+}
+.img:hover {
+  animation: img 0.3s ease both;
+}
+.description {
+  width: 495px;
+  margin: 0 auto;
+}
+.header {
+  text-align: center;
+  font-weight: 500;
+  margin: 0;
+}
+.text {
+  line-height: 24px;
+  max-height: 72px;
+  overflow-y: auto;
+}
+.text::-webkit-scrollbar {
+  width: 0;
+}
+.text:hover::-webkit-scrollbar {
+  width: 5px;
+  border-radius: 8px;
+  background: #cfd8dc;
+}
+
+.text:hover::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 0, 0.5);
+  border-radius: 30px;
+  border: 2px solid #cfd8dc;
+}
+.prices {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.cost {
+  font-size: 18px;
+  font-weight: 600;
+}
+.input_group {
+  padding: 2% 0;
+}
+.buy {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+.submit {
+  height: 32px;
+  width: 310px;
+  border-radius: 30px;
+  font-family: var(--root-font);
+  font-size: 18px;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  background: var(--button-color);
+}
+.submit:active {
+  background: linear-gradient(261.65deg, #ffd773 -3.95%, #e2b645 109.44%);
+}
+@keyframes img {
+  100% {
+    transform: skew(25deg, -25deg);
+  }
+}

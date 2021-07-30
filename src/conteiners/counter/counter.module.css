@@ -1,0 +1,15 @@
+.counter {
+  width: 95px;
+  height: 39px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 30px;
+  background: #e2e9f0;
+  margin: 0 6% 0 2%;
+}
+.counter_button {
+  outline: none;
+  border: none;
+  background: transparent;
+}

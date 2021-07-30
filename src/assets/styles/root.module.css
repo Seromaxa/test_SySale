@@ -1,0 +1,10 @@
+.root_list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+.root_list_item {
+  width: 572px;
+  margin-left: 35px;
+}
