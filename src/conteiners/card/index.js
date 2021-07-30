@@ -24,7 +24,6 @@ export default function Card({ product }) {
     let price = current[0].costs.filter((item) => item.select === true)
     setCost(price[0].price)
     setlitrs(...current)
-    console.log("wwww")
   }, [product, prices])
 
   const setPrice = (ev) => {
